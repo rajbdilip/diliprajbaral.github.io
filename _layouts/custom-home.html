@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<section class="home-hero">
+  <div class="home-main">
+    <header class="home-entry__header">
+      <div class="home-entry__header-inner">
+        <div class="home-entry__group">
+          <div class="home-entry__summary">
+            {% if page.excerpt %}
+              {{ page.excerpt | markdownify }}
+            {% endif %}
+            {% if page.subtitle %}
+              <p>{{ page.subtitle }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+</section>
+
+<div id="main" role="main" class="home-main">
+  <article class="home-entry">
+    <h2 class="home-section__title">Recent posts</h2>
+    <ul class="entry__list">
+      {% assign home_recent_posts_limit = page.recent_posts_limit | default: 5 %}
+      {% for post in site.posts limit: home_recent_posts_limit %}
+        {% assign teaser = post.header.teaser | default: post.header.image %}
+        <li class="entry__list-item">
+          <article class="entry">
+            <h3 class="entry__title">
+              <a class="entry__link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <div class="entry__meta entry__inline-group">
+              <time datetime="{{ post.date | date_to_xmlschema }}">
+                <a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.date | date: "%b %-d, %Y" }}</a>
+              </time>
+              <span>~</span>
+              {% assign words_per_minute = post.words_per_minute | default: site.words_per_minute | default: 200 %}
+              {% assign words = post.content | strip_html | number_of_words %}
+              <span>
+                {% if words < words_per_minute %}
+                  Read in 1 min
+                {% elsif words == words_per_minute %}
+                  Read in 1 min
+                {% else %}
+                  Read in {{ words | divided_by: words_per_minute }} mins
+                {% endif %}
+              </span>
+            </div>
+            {% if teaser %}
+            <div class="entry__image">
+              <img alt="" class="img--th-list" loading="lazy" src="{{ teaser | relative_url }}">
+            </div>
+            {% endif %}
+            <div class="entry__excerpt prose">
+              <div class="prose">{{ post.excerpt | strip_html | truncate: 160 }}</div>
+            </div>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  </article>
+</div>

@@ -1,4 +1,4 @@
-title: Dilip Raj Baral
+title: diliprajbaral.com
 description: Software engineering notes, lessons, and opinions.
 url: "https://diliprajbaral.com"
 baseurl: ""
@@ -7,7 +7,7 @@ markdown: kramdown
 kramdown:
   math_engine: mathjax
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default"
+minimal_mistakes_skin: "rajbdilip-light"
 name: Dilip Raj Baral
 mathjax: true
 show_excerpts: true

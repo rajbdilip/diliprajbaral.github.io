@@ -1,4 +1,10 @@
-/* Center post page content by removing sidebar offset. */
+/* Variables */
+$site-max-width: 80em !default;
+$site-gutter: 1em !default;
+
+/* ==========================================================================
+   Post layout (layout--single)
+   ========================================================================== */
 @media (min-width: 64em) {
   .layout--single .page {
     float: none;
@@ -41,6 +47,9 @@
   margin-block: 1.5rem 1rem;
 }
 
+/* ==========================================================================
+   Blog archive grid (layout--archive)
+   ========================================================================== */
 @media (min-width: 64em) {
   .layout--archive .archive {
     float: none;
@@ -99,6 +108,137 @@
   display: inline;
 }
 
+/* ==========================================================================
+   Custom home layout (layout: custom-home)
+   ========================================================================== */
+$hero-background-color: $background-color !default;
+
+.home-hero {
+  background-color: $hero-background-color;
+  padding: 3.5rem 0;
+}
+
+.home-hero .home-entry__header {
+  margin-bottom: 0;
+}
+
+.home-main {
+  margin-inline: auto;
+  width: 100%;
+  padding: $site-gutter;
+}
+
+@media (min-width: $site-max-width) {
+  .home-main {
+    max-width: $site-max-width;
+  }
+}
+
+.home-entry__header {
+  margin-bottom: 2rem;
+}
+
+.home-entry__title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home-entry__header-inner {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 48em) {
+  .home-entry__header-inner {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.home-hero .home-entry__summary p {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.home-hero .home-entry__summary p:first-of-type {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.home-hero .home-entry__summary p:nth-of-type(2) {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+
+.home-entry__taxonomies p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.home-entry__taxonomies span {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: $muted-text-color;
+}
+
+.home-entry__taxonomies a {
+  display: inline-block;
+  margin-right: 0.75rem;
+  text-decoration: none;
+}
+
+.home-entry__taxonomies a:hover {
+  text-decoration: underline;
+}
+
+.home-section__title {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+/* Entry list (recent posts on home) */
+.entry__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-inline-start: 0;
+  max-width: 45ch;
+}
+
+.entry__list-item {
+  margin-bottom: 2.5rem;
+}
+
+.entry__title {
+  margin-bottom: 0.5rem;
+}
+
+.entry__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75em;
+  color: $muted-text-color;
+}
+
+.entry__image {
+  margin: 0.75rem 0 0.5rem;
+}
+
+.entry__image .img--th-list {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.entry__excerpt {
+  font-size: 0.9em;
+}
+
+/* ==========================================================================
+   Footer theme toggle
+   ========================================================================== */
 .theme-toggle {
   margin-top: 1rem;
 }
