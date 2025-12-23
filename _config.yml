@@ -39,7 +39,10 @@ plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
 locale: "en"
-google_analytics: G-BQTLT1DFDB
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-BQTLT1DFDB"
 comments:
   provider: "disqus"
   disqus:
