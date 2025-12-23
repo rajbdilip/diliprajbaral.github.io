@@ -1,0 +1,21 @@
+/* Center post page content by removing sidebar offset. */
+@media (min-width: 64em) {
+  .layout--single .page {
+    float: none;
+    width: 100%;
+    padding-inline-end: 0;
+  }
+}
+
+.layout--single .page__inner-wrap {
+  margin-inline: auto;
+  float: none;
+  max-width: 65ch;
+}
+
+.layout--single .page__hero-image {
+  display: block;
+  width: 100%;
+  max-width: 65ch;
+  margin-inline: auto;
+}
