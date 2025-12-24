@@ -1,11 +1,18 @@
-<section class="hero-block">
+<section class="hero-block{% if include.image %} hero-block--with-image{% endif %}">
   <div class="hero-block__container">
     <div class="hero-block__inner">
-      {% if include.title %}
-        <h1 class="hero-block__title">{{ include.title }}</h1>
-      {% endif %}
-      {% if include.subtitle %}
-        <p class="hero-block__subtitle">{{ include.subtitle }}</p>
+      <div class="hero-block__content">
+        {% if include.title %}
+          <h1 class="hero-block__title">{{ include.title }}</h1>
+        {% endif %}
+        {% if include.subtitle %}
+          <p class="hero-block__subtitle">{{ include.subtitle }}</p>
+        {% endif %}
+      </div>
+      {% if include.image %}
+        <div class="hero-block__media">
+          <img src="{{ include.image | relative_url }}" alt="{{ include.image_alt | default: include.title }}">
+        </div>
       {% endif %}
     </div>
   </div>

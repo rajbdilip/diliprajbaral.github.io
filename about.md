@@ -2,10 +2,10 @@
 layout: custom-about
 title: About Me
 permalink: /about/
+hero_title: "About"
+hero_subtitle: "Software Engineer, builder, and lifelong fan of sci-fi, clean code, and good music."
 hero_image: /assets/images/about.jpg
 ---
-
-I’m Dilip Raj Baral, a software engineer who still believes computers can make the world a little better (and occasionally funnier).
 
 ## 2015 Me (the time capsule)
 
