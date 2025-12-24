@@ -17,7 +17,7 @@ layout: default
           <article class="entry">
             {% if teaser %}
             <div class="entry__image">
-              <img alt="" class="img--th-list" loading="lazy" src="{{ teaser | relative_url }}">
+              <img alt="{{ post.title | escape }}" class="img--th-list" loading="lazy" src="{{ teaser | relative_url }}">
             </div>
             {% endif %}
             <h3 class="entry__title">
