@@ -49,6 +49,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-include-cache
+include:
+  - favicon.ico
 locale: "en"
 collections:
   notes:
