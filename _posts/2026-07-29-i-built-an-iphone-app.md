@@ -3,7 +3,7 @@ title: "I Built an iPhone App"
 date: 2026-07-29
 layout: single
 classes: wide
-excerpt: "How scattered documents, an abandoned web-app idea, and years of postponed mobile development led me to build and ship my first iPhone app."
+excerpt: "How scattered documents, an abandoned web app idea, and years of postponed mobile development led me to build and ship my first iPhone app."
 author_profile: false
 read_time: true
 categories:
